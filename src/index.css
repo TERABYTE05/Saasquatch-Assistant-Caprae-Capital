@@ -1,0 +1,152 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* SaaSquatch inspired color scheme */
+    --background: 210 25% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 210 22% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 210 22% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 174 85% 51%;
+    --primary-foreground: 210 25% 8%;
+
+    --secondary: 210 20% 18%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 210 20% 18%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 174 85% 51%;
+    --accent-foreground: 210 25% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 210 20% 20%;
+    --input: 210 20% 18%;
+    --ring: 174 85% 51%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for chatbot */
+    --chat-user-bg: 174 85% 51%;
+    --chat-bot-bg: 210 20% 18%;
+    --chat-container-bg: 210 22% 12%;
+    --chat-header-bg: 210 25% 10%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 85% 51%), hsl(174 75% 45%));
+    --gradient-dark: linear-gradient(180deg, hsl(210 25% 8%), hsl(210 25% 10%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(174 85% 51% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(174 85% 51% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(174 85% 51% / 0.5);
+    }
+  }
+  
+  @keyframes bounce-dot {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  .animate-bounce-dot {
+    animation: bounce-dot 1s infinite;
+  }
+  
+  /* Custom prose styles for markdown in chat messages */
+  .prose-chat {
+    color: inherit;
+  }
+  
+  .prose-chat strong {
+    color: hsl(var(--primary));
+    font-weight: 600;
+  }
+  
+  .prose-chat a {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    word-break: break-all;
+  }
+  
+  .prose-chat a:hover {
+    opacity: 0.8;
+  }
+  
+  .prose-chat ul, .prose-chat ol {
+    margin: 0.5rem 0;
+  }
+  
+  .prose-chat li {
+    margin: 0.25rem 0;
+  }
+  
+  .prose-chat p {
+    margin: 0.5rem 0;
+  }
+  
+  .prose-chat p:last-child {
+    margin-bottom: 0;
+  }
+}
