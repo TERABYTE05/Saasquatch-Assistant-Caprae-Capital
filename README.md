@@ -1,97 +1,48 @@
-# Myopia-Detection-Using-Fundus-Images
 
-# Myopia Detection Assistant
-
-**Myopia Detection Assistant** is a classical machine-learning tool designed to classify **retinal fundus images** as either **Myopic** or **Normal**.  
-It uses handcrafted image features and a **Random Forest classifier** to provide fast, interpretable, and accurate eye-health screening without deep learning.
-
+# Saasquatch-Assistant-Caprae-Capital
+# Sasquatch Assistance 
+**Sasquatch Assistance** is an intelligent chatbot designed to provide users with detailed and accurate information about any organization. Leveraging the **Gemini API Flash 2.5**, the chatbot generates quick, conversational, and context-aware responses, making it a useful tool for research, corporate queries, and general organizational insights. 
 ---
 
-## Features
+## Features 
+- **Organization Lookup:** Fetch information about companies, including their profile, website, social media presence, and general overview. 
+- **Interactive Chatbot:** Provides conversational responses for easy and intuitive interaction.
+- **Powered by Gemini API Flash 2.5:** Ensures fast, accurate, and context-aware answers.
+- **User-Friendly Interface:** Simple and accessible interface for seamless queries.
 
-- **Fundus Image Classification:** Detects whether a retina image shows Myopia.  
-- **Explainable Model:** Uses interpretable features like brightness, contrast, entropy, edges, and sharpness  
-- **High Accuracy:** 97.50% accuracy on 2000 fundus images  
-- **Lightweight & Fast:** Runs on CPU — no GPU required  
-- **Easy to Use:** Supports local + Google Colab setups  
-
----
-
+   ---
 ## How It Works
+1. The user sends a query regarding an organization.
+2. Sasquatch Assistance processes the query and sends it to the Gemini API Flash 2.5.
+3. The API returns a structured response, which is formatted and displayed to the user in a conversational manner.
+4.  Users can continue interacting with the chatbot to gather more information or clarification.
 
-1. Upload retina images  
-2. Extract handcrafted image features  
-3. Train Random Forest model  
-4. Predict: **Myopic / Normal**  
-5. Optionally retrain on your dataset  
+ --- 
+ ## Installation
+bash
+# 1. Clone the repository
+git clone https://github.com/YourUsername/Sasquatch-Assistance.git
+cd Sasquatch-Assistance
 
----
+# 2. Install required dependencies
+npm install
 
-#  Model Metrics
-
-This document summarizes the evaluation metrics for the **Myopia Detection ML Model** trained on 2000 retinal fundus images.
-
----
-
-##  Performance Summary
-
-| Metric       | Score     |
-|--------------|----------|
-| Accuracy     | **97.50%** |
-| Precision    | **98%** |
-| Recall       | **97–98%** |
-| F1-Score     | **97–98%** |
-
----
-
-## Confusion Matrix
-
-|                | Pred Normal | Pred Myopic |
-|----------------|-------------|-------------|
-| **Actual Normal** | 194 |  7 |
-| **Actual Myopic** |  3 | 196 |
-
----
-
-##  Interpretation
-
-- **High accuracy (97.5%)**: Model is highly reliable
-- **Balanced precision + recall**: Good for medical screening
-- **Low false positives & false negatives**: Suitable as a baseline diagnostic assistant
-
----
-
-###  Notes
-
-This is a **non-deep-learning model** using handcrafted features, proving traditional ML can still perform well in medical classification tasks.
-
-Future versions will compare with **RETFound and CNNs**.
+# 3. Set up environment variables
+# Create a .env file and add your Gemini API key
+GEMINI_API_KEY=your_gemini_api_key
 
 
-# 🧠 Tech Stack
+## Usage 
+- Start the application.
+- Type the name of the organization you want information about.
+- Receive an AI-generated summary with relevant details.
+- Continue the conversation for additional queries.
 
-This project uses a classical Machine Learning pipeline for medical image analysis.
-
----
-
-## Languages & Frameworks
-| Category | Tools |
-|---|---|
-| Programming Language | **Python** |
-| ML Framework | **Scikit-Learn** |
-| Image Processing | **OpenCV**, **Scikit-Image** |
-| Math & Data | **NumPy**, **Pandas** |
-| Visualization | **Matplotlib** |
-| Notebook Environment | **Google Colab / Jupyter** |
+--- ## Tech Stack 
+- **Backend:** Node.js / Python (your implementation)
+- **API:** Gemini API Flash 2.5
+- **Frontend:** React / HTML/CSS (if applicable)
+- **Deployment:** Local / Cloud-based deployment
 
 
-
-### Author  
-**Teesha**  
-Biomedical + AI enthusiast passionate about medical imaging research ✨
-
----
-
-### Purpose  
-This project demonstrates that **classical machine learning** can still deliver strong results in medical imaging before moving to deep learning.
-
+# 4. Run the application npm run dev
